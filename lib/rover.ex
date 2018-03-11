@@ -55,12 +55,12 @@ defmodule Rover do
   def instructions(x, y, p, mx, my, [head | tail]) do
     [x, y, p] =
       case head do
-        "l" -> Rover.left(x, y, p)
-        "r" -> Rover.right(x, y, p)
-        "m" -> Rover.move(x, y, p, mx, my)
+        "l" -> left(x, y, p)
+        "r" -> right(x, y, p)
+        "m" -> move(x, y, p, mx, my)
       end
 
-    Rover.instructions(x, y, p, mx, my, tail)
+    instructions(x, y, p, mx, my, tail)
   end
 
   def instructions(x, y, p, _, _, []) do
