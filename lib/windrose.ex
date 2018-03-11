@@ -16,35 +16,27 @@ defmodule Windrose do
     [:s, :e, :n, :w]
   end
 
-  def left(:w) do
-    :s
+  @doc """
+  Turn to left
+  """
+  def left(from) do
+    case from do
+      :w -> :s
+      :s -> :e
+      :e -> :n
+      :n -> :w
+    end
   end
 
-  def left(:s) do
-    :e
-  end
-
-  def left(:e) do
-    :n
-  end
-
-  def left(:n) do
-    :w
-  end
-
-  def right(:w) do
-    :n
-  end
-
-  def right(:n) do
-    :e
-  end
-
-  def right(:e) do
-    :s
-  end
-
-  def right(:s) do
-    :w
+  @doc """
+  Turn to right
+  """
+  def right(from) do
+    case from do
+      :w -> :n
+      :n -> :e
+      :e -> :s
+      :s -> :w
+    end
   end
 end
