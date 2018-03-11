@@ -2,6 +2,10 @@ defmodule RoverTest do
   use ExUnit.Case
   doctest Rover
 
+  defp to_list(str) do
+    String.codepoints(str)
+  end
+
   test "Rover turn left north to west" do
     assert Rover.left(1, 2, :n) == [1, 2, :w]
   end
@@ -35,10 +39,10 @@ defmodule RoverTest do
   end
 
   test "Rover instructions 1 2 n  lmlmlmlmm" do
-    assert Rover.instructions(1, 2, :n, 5, 5, String.codepoints("lmlmlmlmm")) == [1, 3, :n]
+    assert Rover.instructions(1, 2, :n, 5, 5, to_list("lmlmlmlmm")) == [1, 3, :n]
   end
 
   test "Rover instructions 3 3 e mmrmmrmrrm" do
-    assert Rover.instructions(3, 3, :e, 5, 5, String.codepoints("mmrmmrmrrm")) == [5, 1, :e]
+    assert Rover.instructions(3, 3, :e, 5, 5, to_list("mmrmmrmrrm")) == [5, 1, :e]
   end
 end
