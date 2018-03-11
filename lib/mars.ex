@@ -4,15 +4,13 @@ defmodule Mars do
   """
 
   @doc """
-  Hello world.
+  Move rovers on mars plateau (stop on limits).
+   ## Examples
 
-  ## Examples
-
-      iex> Mars.hello
-      :world
-
+      iex> Mars.plateau(5, 5, [[1, 2, :n, ["l", "m"]], [3, 3, :e, ["m", "m"]]])
+      [[0, 2, :w], [5, 3, :e]]
   """
-  def hello do
-    :world
+  def plateau(mx, my, rovers_pos) do
+    Enum.map(rovers_pos, fn [x, y, di, mv] -> Rover.instructions(x, y, di, mx, my, mv) end)
   end
 end
