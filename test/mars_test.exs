@@ -11,4 +11,8 @@ defmodule MarsTest do
              [5, 1, :e]
            ]
   end
+
+  test "Test whith invalid coordinates" do
+    assert Mars.explore(-1, "aa", []) == "(x, y) coordinates are integers and greater than 0."
+  end
 end
