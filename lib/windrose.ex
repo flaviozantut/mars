@@ -18,6 +18,11 @@ defmodule Windrose do
 
   @doc """
   Turn to left
+
+  ## Examples
+      iex> Windrose.left(:w)
+      :s
+
   """
   def left(from) do
     case from do
@@ -30,6 +35,10 @@ defmodule Windrose do
 
   @doc """
   Turn to right
+
+  ## Examples
+      iex> Windrose.right(:n)
+      :e
   """
   def right(from) do
     case from do

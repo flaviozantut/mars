@@ -45,4 +45,8 @@ defmodule RoverTest do
   test "Rover instructions 3 3 e mmrmmrmrrm" do
     assert Rover.instructions(3, 3, :e, 5, 5, to_list("mmrmmrmrrm")) == [5, 1, :e]
   end
+
+  test "Rover instructions with move as string" do
+    assert Rover.instructions(3, 3, :e, 5, 5, "mmrmmrmrrm") == [5, 1, :e]
+  end
 end

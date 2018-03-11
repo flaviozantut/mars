@@ -47,6 +47,7 @@ defmodule Rover do
 
   @doc """
   Move rover to new position by set of instructions (stop on limits).
+
   ## Examples
 
       iex> Rover.instructions(3, 3, :e, 5, 5, ["l", "m"])
@@ -65,5 +66,17 @@ defmodule Rover do
 
   def instructions(x, y, p, _, _, []) do
     [x, y, p]
+  end
+
+  @doc """
+  Move rover to new position by set of instructions as string (stop on limits).
+
+  ## Examples
+
+      iex> Rover.instructions(3, 3, :e, 5, 5, "lm")
+      [3, 4, :n]
+  """
+  def instructions(x, y, p, mx, my, move) do
+    instructions(x, y, p, mx, my, String.codepoints(move))
   end
 end

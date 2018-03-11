@@ -1,21 +1,10 @@
 # Mars
 
-**TODO: Add description**
+**Exploring mars with elixir**
 
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `mars` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:mars, "~> 0.1.0"}
-  ]
-end
+```shell
+$ iex -S mix
+iex(1)> rovers = [[1, 2, :n, "lmlmlmlmm"], [3, 3, :e, "mmrmmrmrrm"]]
+iex(2)> Mars.explore(5, 5, rovers)
+[[1, 3, :n], [5, 1, :e]]
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/mars](https://hexdocs.pm/mars).
-
