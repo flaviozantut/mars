@@ -14,7 +14,7 @@ defmodule Mars do
   """
   def explore(mx, my, rovers_pos)
       when is_integer(mx) and is_integer(my) and (mx > 0 and my > 0) do
-    Enum.map(rovers_pos, fn [x, y, di, mv] -> Rover.instructions(x, y, di, mx, my, mv) end)
+    Enum.map(rovers_pos, fn [x, y, di, mv] -> Rover.navigate(x, y, di, mx, my, mv) end)
   end
 
   def explore(_, _, _), do: "(x, y) coordinates are integers and greater than 0."
