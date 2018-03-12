@@ -45,4 +45,8 @@ defmodule RoverTest do
   test "Rover invalid instructions" do
     assert Rover.navigate(-1, 3, :e, 5, 5, "l") == "Invalid rover instructions"
   end
+
+  test "Rover invalid instructions move" do
+    assert Rover.navigate(1, 3, :e, 5, 5, "z") == "Invalid rover instructions"
+  end
 end

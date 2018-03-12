@@ -13,7 +13,11 @@ defmodule Rover do
   def navigate(x, y, p, mx, my, move)
       when is_integer(x) and is_integer(y) and (x >= 0 and y >= 0) and is_integer(mx) and
              is_integer(my) and (mx > 0 and my > 0) do
-    instructions(x, y, p, mx, my, String.codepoints(move))
+    if String.match?(move, ~r/l|r|m/) do
+      instructions(x, y, p, mx, my, String.codepoints(move))
+    else
+      "Invalid rover instructions"
+    end
   end
 
   def navigate(_, _, _, _, _, _), do: "Invalid rover instructions"
